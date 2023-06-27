@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import IRestaurante from "../../../interfaces/IRestaurante"
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material"
+import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material"
 import axios from "axios"
+import { Link } from "react-router-dom"
 
 export const AdministracaoRestaurante = () => {
   const [restaurantes, setRestaurantes] = useState<IRestaurante[]>([])
@@ -19,6 +20,12 @@ export const AdministracaoRestaurante = () => {
             <TableCell variant="head" color="primary">
               Nome
             </TableCell>
+            <TableCell>
+              Editar
+            </TableCell>
+            <TableCell>
+              Excluir
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -26,6 +33,12 @@ export const AdministracaoRestaurante = () => {
             <TableRow>
               <TableCell align="center" size="small">
                 {restaurante.nome}
+              </TableCell>
+              <TableCell>
+                [ <Link to={`/admin/restaurantes/${restaurante.id}`}>Editar</Link>]
+              </TableCell>
+              <TableCell>
+                <Button>Excluir</Button>
               </TableCell>
             </TableRow>
           ))}
