@@ -40,9 +40,6 @@ export const FormularioRestaurante = () => {
         })
 
     }
-
-    console.log('preciso enviar dados para a API: ')
-    console.log(nomeRestaurante)
   }
 
   return (
