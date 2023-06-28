@@ -1,12 +1,14 @@
 import { Box, Button, TextField, Typography } from "@mui/material"
-import axios from "axios"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import IRestaurante from "../../../interfaces/IRestaurante"
 import http from "../../../http"
 
+
+
 export const FormularioRestaurante = () => {
   const [nomeRestaurante, setNomeRestaurante] = useState('')
+
 
   const parametros = useParams()
 
@@ -26,6 +28,7 @@ export const FormularioRestaurante = () => {
       })
         .then(() => {
           alert("Restaurante Atualizado com sucesso!")
+   
         })
     } else {
       http.post('restaurantes/', {
@@ -34,9 +37,8 @@ export const FormularioRestaurante = () => {
         .then(() => {
           alert("Restaurante Cadastrado!")
         })
+
     }
-
-
 
     console.log('preciso enviar dados para a API: ')
     console.log(nomeRestaurante)
@@ -57,6 +59,7 @@ export const FormularioRestaurante = () => {
         </TextField>
 
         <Button type="submit" variant="outlined" fullWidth sx={{ marginTop: 1 }}>Salvar</Button>
+        
       </Box>
     </Box>
   )

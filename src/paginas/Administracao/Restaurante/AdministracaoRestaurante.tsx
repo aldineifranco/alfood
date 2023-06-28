@@ -39,18 +39,23 @@ export const AdministracaoRestaurante = () => {
         </TableHead>
         <TableBody>
           {restaurantes.map(restaurante => (
-            <TableRow>
-              <TableCell align="center" size="small">
-                {restaurante.nome}
-              </TableCell>
-              <TableCell>
-                [ <Link to={`/admin/restaurantes/${restaurante.id}`}>Editar</Link>]
-              </TableCell>
-              <TableCell>
-                <Button variant="outlined" color="error" onClick={() => excluir(restaurante)}>Excluir</Button>
-              </TableCell>
-            </TableRow>
+            <>
+              <TableRow>
+                <TableCell align="center" size="small">
+                  {restaurante.nome}
+                </TableCell>
+                <TableCell>
+                  [ <Link to={`/admin/restaurantes/${restaurante.id}`}>Editar</Link>]
+                </TableCell>
+                <TableCell>
+                  <Button variant="outlined" color="error" onClick={() => excluir(restaurante)}>Excluir</Button>
+                </TableCell>
+              </TableRow>
+            </>
           ))}
+          <TableRow sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 4}}>
+            <Button variant="outlined" color="info"><Link to={'/admin/restaurantes/novo'}>Adcionar Restaurante</Link></Button>
+          </TableRow>
         </TableBody>
       </Table>
     </TableContainer>
