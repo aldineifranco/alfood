@@ -1,3 +1,49 @@
+
+form {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  justify-content: end;
+  margin-bottom: 48px;
+}
+
+form button {
+  padding: 8px 24px;
+  background-color: #f2745f;
+  color: #fff;
+  border-style: none;
+  border-radius: 4px;
+  transition: ease 0.5s;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #da6550;
+}
+
+form select {
+  padding: 6px;
+  border-style: none;
+  border-bottom: 1px solid #f2745f;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #555;
+}
+
+form label {
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-right: 12px;
+  font-weight: bold;
+  color: #555;
+}
+
+form input {
+  padding: 6px;
+  border: 1px solid #f2745f;
+  border-radius: 4px;
+}
+
+
 .ListaRestaurantes {
   margin-top: 1.5rem;
   padding: 2rem;
