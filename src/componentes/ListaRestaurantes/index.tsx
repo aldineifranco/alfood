@@ -59,7 +59,7 @@ const ListaRestaurantes = () => {
     {/* sinta-se livre para deixar o formulário mais elegante, aplicando estilos CSS */}
     <form onSubmit={buscar}>
       <div>
-        <input type="text" value={busca} onChange={evento => setBusca(evento.target.value)} />
+        <input type="text" value={busca} onChange={evento => setBusca(evento.target.value)} placeholder='Faça sua busca' />
       </div>
       <div>
         <label htmlFor="select-ordenacao">Ordenação</label>
