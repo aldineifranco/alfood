@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import IRestaurante from "../../../interfaces/IRestaurante"
-import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material"
+import { Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material"
 import { Link } from "react-router-dom"
 import http from "../../../http"
 
@@ -22,11 +22,12 @@ export const AdministracaoRestaurante = () => {
   }
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer>
+      <Button variant="contained" color="info" fullWidth sx={{ mb: 2 }}><Link to={'/admin/restaurantes/novo'} style={{ textDecoration: 'none', color: 'white' }}>Adcionar Restaurante</Link></Button>
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell variant="head" color="primary">
+            <TableCell variant="head" color="primary" align="center">
               Nome
             </TableCell>
             <TableCell>
@@ -53,11 +54,12 @@ export const AdministracaoRestaurante = () => {
               </TableRow>
             </>
           ))}
-          <TableRow sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 4}}>
-            <Button variant="outlined" color="info"><Link to={'/admin/restaurantes/novo'}>Adcionar Restaurante</Link></Button>
+          <TableRow sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 4 }}>
+
           </TableRow>
         </TableBody>
       </Table>
+
     </TableContainer>
   )
 }
