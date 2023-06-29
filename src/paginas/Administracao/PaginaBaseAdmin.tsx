@@ -8,30 +8,39 @@ export const PaginaBaseAdmin = () => {
         <Container maxWidth="xl">
           <Toolbar>
             <Typography variant="h6">
-              Administração
+              <Link component={RouterLink} to="/">Administração</Link>
+
             </Typography>
 
-            <Box sx={{ display: 'flex', flexGrow: 1, justifyContent: 'end' }}>
-              <Link component={RouterLink} to="restaurantes">
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', flexGrow: 1 }}>
+              <Link component={RouterLink} to="/admin/restaurantes/">
                 <Button sx={{ my: 2, color: 'white' }}>
-                  Restaurantes
+                  Home
                 </Button>
               </Link>
-              <Link component={RouterLink} to="restaurantes/novo">
-                <Button sx={{ my: 2, color: 'white' }}>
-                  Novo Restaurante
+              <Box sx={{display: 'flex', gap: 4}}>
+                <Link component={RouterLink} to="restaurantes/novo">
+                  <Button sx={{ my: 2, color: 'white' }}>
+                    Novo Restaurante
+                  </Button>
+                </Link>
+                <Link component={RouterLink} to="pratos">
+                  <Button sx={{ my: 2, color: 'white' }}>
+                    Pratos
+                  </Button>
+                </Link>
+                <Link component={RouterLink} to="pratos/novo">
+                  <Button sx={{ my: 2, color: 'white' }}>
+                    Novo Prato
+                  </Button>
+                </Link>
+              </Box>
+              <Link component={RouterLink} to="/">
+                <Button sx={{ my: 2, color: 'white', border: '1px solid #fff' }}>
+                  Sair
                 </Button>
               </Link>
-              <Link component={RouterLink} to="pratos">
-                <Button sx={{ my: 2, color: 'white' }}>
-                  Pratos
-                </Button>
-              </Link>
-              <Link component={RouterLink} to="pratos/novo">
-                <Button sx={{ my: 2, color: 'white' }}>
-                  Novo Prato
-                </Button>
-              </Link>
+
             </Box>
           </Toolbar>
         </Container>
